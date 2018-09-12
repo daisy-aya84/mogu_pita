@@ -39,13 +39,6 @@ class UsersController < ApplicationController
       redirect_to("/users/#{@user.id}/edit")
     end
     
-    
-    
-    # if 
-      
-    # else
-    #   render("/users/#{@user.id}/choose")
-    # end
   end
   
   def edit
@@ -67,8 +60,6 @@ class UsersController < ApplicationController
       @user.update(cut_img: "#{member_number}")
       redirect_to("/users/#{@user.id}/set")
     end
-    
- 
   end
   
   def set
@@ -77,9 +68,6 @@ class UsersController < ApplicationController
   
   def input
     @user = User.find_by(id: params[:id])
-    p "============"
-    p params[:cut_img]
-    p "============"
     if params[:cut_img] != nil
       @user.update(cut_img: params[:cut_img])
       @foods = Food.where(op_id: @user.op_id)
@@ -93,7 +81,7 @@ class UsersController < ApplicationController
       end
       
       food_count = rand(1..f_count)
-      selected_user_id = id_array[food_count-1]
+      selected_user_id = id_array[food_count - 1]
       @user.update(f_id: selected_user_id)
       r_image = @user.resize(selected_user_id)
       
