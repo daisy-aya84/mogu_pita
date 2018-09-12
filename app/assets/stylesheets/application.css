@@ -162,6 +162,18 @@ tr:nth-child(even) {
     color: black;
 }
 
+footer{
+    font-size: 80%;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F9D348;
+}
+footer p{
+    letter-spacing: 1px;
+}
+
 /*.portrait{*/
 /*    background-color:#f8f8f8;*/
 /*    width: 500px;*/
