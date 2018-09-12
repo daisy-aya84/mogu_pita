@@ -138,6 +138,30 @@ th, td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+.alert {
+    padding: 20px;
+    background-color: #f436659d;
+    color: white;
+    margin: 15px 0px;
+}
+
+.closebtn {
+    padding-top: 5px; 
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
 /*.portrait{*/
 /*    background-color:#f8f8f8;*/
 /*    width: 500px;*/
