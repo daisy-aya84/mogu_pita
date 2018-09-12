@@ -1,0 +1,17 @@
+<article>
+    <div class="title">
+        <h2>Step3</h2>
+    </div>
+    <p>あなたの顔が写っている画像を<br>
+    アップロードしてください<br>
+    （複数人も可能です）</p>
+    <div class="portrait">
+      <div class="form">
+        <%  %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <input name="image" type="file" style='font-size:30px; padding:80px 0px;'><br>
+          <input type="submit" value="アップロード" style='font-size:30px; padding:80px 0px;'>
+        <% end %>
+       </div>
+      </div>
+</article>

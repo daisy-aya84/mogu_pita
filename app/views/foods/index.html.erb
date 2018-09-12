@@ -1,0 +1,14 @@
+<%=link_to("【追加】","/foods/new") %>
+<br>
+<% @foods.each do |food| %>
+  <p>---------------</p>
+  <p>ID：　　<%= food.id %></p>
+  <p>名前：　<%= food.name %></p>
+  <p>写真：　<%= food.image %></p>
+  <p>オプション：<%= food.op_id %></p>
+  <p>x座標：　<%= food.x %></p>
+  <p>y座標：　<%= food.y %></p>
+  <p>横幅：　<%= food.width %></p>
+  <p>縦幅：　<%= food.height %></p>
+<% end %>
+

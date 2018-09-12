@@ -1,0 +1,19 @@
+<article>
+  <div class="title">
+    <h2>Step2</h2>
+  </div>
+  <p><strong><%= @user.name %></strong>さんが<br>
+  今いちば〜ん食べたいものは？</p>
+  <div class="form">
+    <%= form_tag("/users/#{@user.id}/eat") do %>
+      <% @options.each do |option| %>
+        <label class="option">
+          <input type="radio" name="op_id" value="<%=" #{option.id} "%>"><%= option.name %>
+        </label>
+        <br>
+      <% end %>
+      <br>
+      <input type="submit" value="これにする" style='font-size:30px; padding:80px 0px;'>
+    <% end %>
+  </div>
+</article>

@@ -1,0 +1,12 @@
+<h2>何を食べる〜？</h2>
+
+<%= form_tag("/users/eat") do %>
+  <%= @options.each do |option| %>
+    <label>
+      <input type="radio" name="f_id" id="<%=" #{option.name} "%>" value="<%=" #{option.name} "%>"><%= option.name %>
+    </label>
+    <br>
+
+  <% end %>
+  <input type="submit" value="submit">
+<% end %>

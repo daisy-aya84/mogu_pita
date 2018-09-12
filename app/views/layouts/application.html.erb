@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+		<title>モグピタ｜食べたいものが食べられない時にも、もぐもぐ気分</title>
+    <% twitter_card = get_twitter_card_info(@user ? @user : nil) %>
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content=<%=twitter_card[:site]%> /> 
+    <meta property="og:url" content=<%=twitter_card[:url]%> />
+    <meta property="og:title" content=<%=twitter_card[:title]%> />
+    <meta property="og:description" content=<%=twitter_card[:description]%> />
+    <meta property="og:image" content=<%=twitter_card[:image]%> />
+    
+		<meta name="description" content="美味しいご飯をたくさん食べたきもちになれる新感覚サービス">
+		<meta name="keywords" content="顔ハメ,ダイエット">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="shortcut icon" href="https://summer-third-seminer-ayanooooon.c9users.io/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+      <header>
+        <div class="logo">
+          <a href="/"><img src="/mogu_logo.png"></a>
+        </div>
+      </header>
+      <div id="content">
+        <% flash.each do |key, value|%>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <%= yield %>
+      </div>
+  </body>
+</html>

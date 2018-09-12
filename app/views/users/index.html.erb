@@ -1,0 +1,12 @@
+<h2>ユーザー一覧</h2>
+<% @users.each do |user| %>
+  <p>--------------------------------------</p>
+  <p>ID:<%= user.id %></p>
+  <p>名前:<%= user.name %></p>
+  <p>写真:<%= user.image %></p>
+  <p>トリミング:<%= user.cut_img %></p>
+  <p>リサイズ：<%= user.resized_img%></p>
+  <p>完成形:<%= user.final_img %></p>
+  <p>food_ID:<%= user.f_id %></p>
+  <p>optionID:<%= user.op_id %></p>
+<% end %>

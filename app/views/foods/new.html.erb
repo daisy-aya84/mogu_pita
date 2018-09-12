@@ -1,0 +1,20 @@
+<article>
+  <div class="title">
+    <h2>foodDBに追加</h2>
+  </div>
+  <div class="form">
+    <%= form_tag("/foods/create", {multipart: true}) do %>
+        ①名前：<input name="name" type="text"><br><br><br>
+        ②食べたいタイプ選択：<br>
+        <% @options.each do |option| %>
+          <label>
+            <input type="radio" name="op_id" value="<%=" #{option.id} "%>"><%= option.name %>
+          </label>
+          <br>
+        <% end %>
+        <br><br>
+        <input type="submit" value="送信">
+    <% end %>
+  </div>
+</article>
+

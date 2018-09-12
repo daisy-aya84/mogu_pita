@@ -1,0 +1,21 @@
+<article>
+    <div class="title">
+        <h2>Step4</h2>
+    </div>
+    <p>あなたの写真を選んでください</p>
+    <% count = @user.cut_img.to_i-2 %>
+    <%= form_tag("/users/#{@user.id}/input") do %>
+        <% for i in 0..count do  %>
+            <label class="option">
+              <input type="radio" name="cut_img" value="<%="cut#{@user.id}_#{i}.jpg"%>"><img src="<%="/cut_pics/cut#{@user.id}_#{i}.jpg"%>" alt="upper" class="cut_pic">
+            </label>
+        <% end %>
+        <br>
+        <input type="submit" value="これがわたしです" style='font-size:30px; padding:80px 0px;'><br>
+        
+        ／突然の自己申告＼
+    <% end %>
+    <div class="select">
+        <%=link_to("やりなおす","/users/#{@user.id}/edit") %>
+    </div>
+</article>

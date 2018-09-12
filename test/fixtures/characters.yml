@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  work_id: 1
+  sex: 1
+  xplace: 1
+  yplace: 1
+  wsize: 1
+  hsize: 1
+
+two:
+  name: MyString
+  work_id: 1
+  sex: 1
+  xplace: 1
+  yplace: 1
+  wsize: 1
+  hsize: 1

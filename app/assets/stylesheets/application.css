@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+  
+body {
+	width:100%;			/*ページ全体の横幅*/
+	background-color:#ffffff;	/*ページ全体の背景色*/
+	background-image:none;		/*ウェブページ全体の背景画像を無しにする*/
+    font-size:20px;
+    padding: 0;
+    margin: 0;
+    font-family: "游ゴシック体", YuGothic, sans-serif;;		/* フォントサイズを100%にする */
+}
+
+#content{
+    width:750px;
+    margin:auto;
+    
+}
+
+header {
+    height:150px;
+    background-color: #F9D348;
+    text-align:center;
+    display: table;
+    width: 100%;
+}
+
+header .logo{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.logo img{
+    height: 50px;
+}
+
+a{
+    text-decoration: none ;
+    color:black;
+}
+
+article{
+     text-align: center;
+}
+
+article p{
+    font-size: 30pt;
+}
+.title{
+    height: 400px;
+    text-align:center;
+    display: table;
+    width: 100%;
+}
+.title h1{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 90px;
+    letter-spacing: 10px;
+}
+
+.title h2{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 66px;
+    letter-spacing: 10px;
+}
+
+.title p{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 50px;
+    letter-spacing: 10px;
+
+}
+
+.start{
+    height: 750px;
+    text-align:center;
+    display: table;
+    width: 100%;   
+}
+
+
+
+.start p{
+    width: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 50px;
+    border-color: #F9D348;
+}
+
+.form{
+    height:400px;
+    margin:100px;
+}
+.gohan{
+    padding: 10px;
+    font-size: 30px;
+    margin: 60px;
+}
+
+.option{
+    padding: 10px;
+    display: block;
+    font-size: 40px;
+}
+
+.select{
+    font-size: 40px;
+    padding: 50px;
+}
+
+.cut_pic{
+    margin:20px;
+}
+
+input[type=radio] {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 10px;
+}
+/*.portrait{*/
+/*    background-color:#f8f8f8;*/
+/*    width: 500px;*/
+/*    margin: auto;*/
+/*}*/
+
+/*.portrait form{*/
+/*    margin: 60px;*/
+/*    display: inline-block;*/
+/*}*/
+
