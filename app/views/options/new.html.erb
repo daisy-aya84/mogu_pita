@@ -1,0 +1,11 @@
+<article>
+  <div class="title">
+    <h2>optionDBに追加</h2>
+  </div>
+  <div class="form">
+    <%= form_tag("/options/create") do %>
+      名前：<input name="name" type="text"><br><br><br>
+      <input type="submit" value="送信">
+    <% end %>
+  </div>
+</article>

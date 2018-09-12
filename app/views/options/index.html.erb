@@ -5,10 +5,18 @@
   <p><%=link_to("【追加】","/foods/new") %></p>
   <br>
   <br>
-  <% @options.each do |option| %>
-    <label>
-      <input type="radio" name="f_id" id="<%=" #{option.name} "%>" value="<%=" #{option.name} "%>"><%= option.name %>
-    </label>
-    <br>
-  <% end %>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>名前</th>
+      <th>個数</th>
+    </tr>
+    <% @options.each do |option| %>
+      <tr>
+        <td><%= option.id %></td>
+        <td><%= option.name %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
 </article>

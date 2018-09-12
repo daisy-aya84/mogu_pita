@@ -2,9 +2,24 @@ class OptionsController < ApplicationController
   def index
     @options = Option.all
   end
-  
-  def show
-    @option = Option.find_by(id: params[:id])
-    p @option
+
+  def new
+    @option = Option.new
   end
+
+  def create
+    @option = Option.new(
+      name: params[:name]
+      )
+    if @option.save
+      flash[:notice] = "「#{@option.name}」登録完了"
+      redirect_to action: 'index'
+    else
+      redirect_to action: "new"
+    end
+  end
+
+  # def show
+  #   @option = Option.find_by(id: params[:id])
+  # end
 end

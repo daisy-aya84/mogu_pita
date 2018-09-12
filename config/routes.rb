@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post 'foods/create' => 'foods#create'
   get 'foods/:id/check' => 'foods#check'
   post 'foods/:id/save' => 'foods#save'
-  get 'foods/:id/final' => 'foods#final'
   
   get 'users/index' => 'users#index'
   get 'users/new' => 'users#new'
@@ -19,8 +18,8 @@ Rails.application.routes.draw do
   get 'users/:id/share' => 'users#share'
   
   get 'options' => 'options#index'
-  get 'options/:id' => 'options#show'
-  get 'options/index'
+  get 'options/new' => 'options#new'
+  post 'options/create' => 'options#create'
 
   get '/' => 'home#top'
   get 'about' => 'home#about'

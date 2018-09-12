@@ -12,7 +12,6 @@ class FoodsController < ApplicationController
     @food = Food.new(
       name: params[:name],
       op_id: params[:op_id],
-      # image: params[:image]
       )
     if @food.save
       redirect_to action: 'check', id: @food.id
@@ -35,22 +34,19 @@ class FoodsController < ApplicationController
       File.binwrite("public/foods/#{@food.op_id}/#{@food.image}", p_image.read)
     end
     @food.save
-    
-    p '============='
-    p @food.image
-    p '============='
-    
+
     array = []
     array  = @food.get_positions
     
     if @food.update(x: array[0], y: array[1], width: array[2], height: array[3])
-      redirect_to action: 'final', id: @food.id
+      flash[:notice] = "「#{@food.name}登録完了」"
+      redirect_to action: 'index', id: @food.id
     else
       redirect_to action: 'check', id: @food.id
     end
   end
   
-  def final
-    @food = Food.find_by(id: params[:id])
-  end
+  # def final
+  #   @food = Food.find_by(id: params[:id])
+  # end
 end
