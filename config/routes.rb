@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   get 'options' => 'options#index'
   get 'options/:id' => 'options#show'
+  get 'options/index'
 
   get '/' => 'home#top'
   get 'about' => 'home#about'

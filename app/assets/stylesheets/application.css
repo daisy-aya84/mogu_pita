@@ -14,7 +14,6 @@ body {
 #content{
     width:750px;
     margin:auto;
-    
 }
 
 header {
@@ -81,8 +80,6 @@ article p{
     width: 100%;   
 }
 
-
-
 .start p{
     width: 60px;
     display: table-cell;
@@ -96,6 +93,7 @@ article p{
     height:400px;
     margin:100px;
 }
+
 .gohan{
     padding: 10px;
     font-size: 30px;
@@ -169,6 +167,7 @@ footer{
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #F9D348;
+    margin-top: 100px;
 }
 footer p{
     letter-spacing: 1px;
