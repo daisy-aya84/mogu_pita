@@ -1,6 +1,7 @@
 class OptionsController < ApplicationController
   def index
     @options = Option.all
+    @foods = Food.all
   end
 
   def new

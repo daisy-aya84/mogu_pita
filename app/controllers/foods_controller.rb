@@ -4,6 +4,7 @@ class FoodsController < ApplicationController
   end
   
   def new
+    @foods = Food.all
     @food = Food.new
     @options = Option.all
   end

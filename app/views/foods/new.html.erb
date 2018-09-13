@@ -8,7 +8,7 @@
         ②食べたいタイプ選択：<br>
         <% @options.each do |option| %>
           <label>
-            <input type="radio" name="op_id" value="<%=" #{option.id} "%>"><%= option.name %>
+            <input type="radio" name="op_id" value="<%=" #{option.id} "%>"><%= option.name %>(<%= @foods.where(op_id: option.id).count %>個)
           </label>
           <br>
         <% end %>

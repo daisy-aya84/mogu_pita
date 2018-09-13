@@ -15,6 +15,7 @@
       <tr>
         <td><%= option.id %></td>
         <td><%= option.name %></td>
+        <td><%= @foods.where(op_id: option.id).count %></td>
         <td></td>
       </tr>
     <% end %>
