@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   
   def choose
     @options = Option.all
+    @foods = Food.all
     @user = User.find_by(id: params[:id])
   end
 
