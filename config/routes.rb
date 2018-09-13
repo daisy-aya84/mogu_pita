@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'foods/create' => 'foods#create'
   get 'foods/:id/check' => 'foods#check'
   post 'foods/:id/save' => 'foods#save'
+  post 'foods/:id/destroy' => 'foods#destroy'
   
   get 'users/index' => 'users#index'
   get 'users/new' => 'users#new'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get 'options' => 'options#index'
   get 'options/new' => 'options#new'
   post 'options/create' => 'options#create'
+  post 'options/:id/destroy' => 'options#destroy'
 
   get '/' => 'home#top'
 

@@ -46,4 +46,10 @@ class FoodsController < ApplicationController
       redirect_to action: 'check', id: @food.id
     end
   end
+
+  def destroy
+    Food.find(params[:id]).destroy
+    flash[:notice] = "削除が完了しました"
+    redirect_to action: 'index'
+  end
 end

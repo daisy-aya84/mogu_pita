@@ -15,6 +15,7 @@
       <th>ｙ座標</th>
       <th>横幅</th>
       <th>高さ</th>
+      <th>編集</th>
     </tr>
     <% @foods.each do |food| %>
       <tr>
@@ -26,6 +27,7 @@
         <td><%= food.y %></td>
         <td><%= food.width %></td>
         <td><%= food.height %></td>
+        <td><%=link_to("【削除】", "/foods/#{food.id}/destroy", method: :post, data: { confirm: "You sure?" }) %></td>
       </tr>
     <% end %>
   </table>

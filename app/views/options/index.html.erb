@@ -10,13 +10,14 @@
       <th>ID</th>
       <th>名前</th>
       <th>個数</th>
+      <th>編集</th>
     </tr>
     <% @options.each do |option| %>
       <tr>
         <td><%= option.id %></td>
         <td><%= option.name %></td>
         <td><%= @foods.where(op_id: option.id).count %></td>
-        <td></td>
+        <td><%=link_to("【削除】", "/options/#{option.id}/destroy", method: :post, data: { confirm: "You sure?" }) %></td>
       </tr>
     <% end %>
   </table>

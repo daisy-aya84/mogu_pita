@@ -19,4 +19,10 @@ class OptionsController < ApplicationController
       redirect_to action: "new"
     end
   end
+
+  def destroy
+    Option.find(params[:id]).destroy
+    flash[:notice] = "削除が完了しました"
+    redirect_to action: 'index'
+  end
 end
