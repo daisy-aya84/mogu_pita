@@ -45,8 +45,4 @@ class FoodsController < ApplicationController
       redirect_to action: 'check', id: @food.id
     end
   end
-  
-  # def final
-  #   @food = Food.find_by(id: params[:id])
-  # end
 end

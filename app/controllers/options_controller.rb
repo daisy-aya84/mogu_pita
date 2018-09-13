@@ -18,8 +18,4 @@ class OptionsController < ApplicationController
       redirect_to action: "new"
     end
   end
-
-  # def show
-  #   @option = Option.find_by(id: params[:id])
-  # end
 end
