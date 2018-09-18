@@ -173,6 +173,34 @@ footer p{
     letter-spacing: 1px;
 }
 
+ul {
+    margin-left: 5%;
+}
+
+#menu {
+    list-style: none;
+    overflow: hidden;
+}
+
+#menu li {
+    width: 150px;
+    text-align: center;
+    background-color: #F9D348;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 2px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+#admin {
+    border: 1px black;
+}
 /*.portrait{*/
 /*    background-color:#f8f8f8;*/
 /*    width: 500px;*/
