@@ -13,6 +13,8 @@ class OptionsController < ApplicationController
       name: params[:name]
       )
     if @option.save
+      path = "public/foods/#{@option.id}"
+      FileUtils.mkdir_p(path) unless FileTest.exist?(path)
       flash[:notice] = "「#{@option.name}」登録完了"
       redirect_to action: 'index'
     else
@@ -21,7 +23,15 @@ class OptionsController < ApplicationController
   end
 
   def destroy
-    Option.find(params[:id]).destroy
+    @option = Option.find_by(id: params[:id])
+    @foods = Food.where(op_id: params[:id])
+    if @foods.count > 0
+      @foods.each do |food|
+        food.destroy
+      end
+    end
+    @option.dir_delete
+    @option.destroy
     flash[:notice] = "削除が完了しました"
     redirect_to action: 'index'
   end

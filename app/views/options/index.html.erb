@@ -2,7 +2,7 @@
   <div class="title">
     <h2>オプション一覧</h2>
   </div>
-  <p><%=link_to("【追加】","/foods/new") %></p>
+  <p><%=link_to("【追加】","/options/new") %></p>
   <br>
   <br>
   <table>
@@ -17,7 +17,7 @@
         <td><%= option.id %></td>
         <td><%= option.name %></td>
         <td><%= @foods.where(op_id: option.id).count %></td>
-        <td><%=link_to("【削除】", "/options/#{option.id}/destroy", method: :post, data: { confirm: "You sure?" }) %></td>
+        <td><%=link_to("【削除】", "/options/#{option.id}/destroy", method: :post, data: { confirm: "このオプションに所属しているfoodsの画像も削除されます。\nよろしいですか?" }) %></td>
       </tr>
     <% end %>
   </table>
