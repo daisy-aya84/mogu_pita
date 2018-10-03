@@ -23,23 +23,33 @@ class UsersController < ApplicationController
   
   def choose
     @options = Option.all
-    @foods = Food.all
+    # @foods = Food.all
+    @foods = Food.where(op_id: 19)
     @user = User.find_by(id: params[:id])
   end
 
   def eat
     @user = User.find_by(id: params[:id])
 
-    if params[:op_id] == nil
+    # if params[:op_id] == nil
+    #   flash[:notice] = "ひとつ選択して下さい"
+    #   redirect_to("/users/#{@user.id}/choose")
+    # else
+    #   food_id = params[:op_id]
+    #   @user.op_id = food_id.to_i
+    #   @user.save
+    #   redirect_to("/users/#{@user.id}/edit")
+
+    #19っていうid番号変更！！！！！！！！！！！！！！！！
+    if params[:f_id] == nil
       flash[:notice] = "ひとつ選択して下さい"
       redirect_to("/users/#{@user.id}/choose")
     else
-      food_id = params[:op_id]
-      @user.op_id = food_id.to_i
+      @user.op_id = 19
+      @user.f_id = params[:f_id]
       @user.save
       redirect_to("/users/#{@user.id}/edit")
     end
-    
   end
   
   def edit
@@ -71,23 +81,34 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     if params[:cut_img] != nil
       @user.update(cut_img: params[:cut_img])
-      @foods = Food.where(op_id: @user.op_id)
-      f_count = @foods.count
-      id_array = [f_count]
-      i = 0
+
+      #ランダムで画像を決めてる処理
+      # --------------------------------------
+      # @foods = Food.where(op_id: @user.op_id)
+      # f_count = @foods.count
+      # id_array = [f_count]
+      # i = 0
       
-      @foods.each do |food|
-        id_array[i] = food.id
-        i += 1
-      end
+      # @foods.each do |food|
+      #   id_array[i] = food.id
+      #   i += 1
+      # end
+      # --------------------------------------
       
-      food_count = rand(1..f_count)
-      selected_user_id = id_array[food_count - 1]
-      @user.update(f_id: selected_user_id)
-      r_image = @user.resize(selected_user_id)
+      # food_count = rand(1..f_count)
+      # selected_user_id = id_array[food_count - 1]
+      # @user.update(f_id: selected_user_id)
+      # r_image = @user.resize(selected_user_id)
+
+      f_id = @user.f_id 
+      r_image = @user.resize(f_id)
       
+      # @user.update(resized_img: r_image)
+      # final_image_name = @user.mix(selected_user_id)
+      # @user.update(final_img: final_image_name)
+
       @user.update(resized_img: r_image)
-      final_image_name = @user.mix(selected_user_id)
+      final_image_name = @user.mix(f_id)
       @user.update(final_img: final_image_name)
       
       redirect_to("/users/#{@user.id}/share")

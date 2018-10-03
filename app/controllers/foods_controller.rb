@@ -36,10 +36,17 @@ class FoodsController < ApplicationController
     end
     @food.save
 
-    array = []
-    array  = @food.get_positions
+    # array = []
+    # array  = @food.get_positions
     
-    if @food.update(x: array[0], y: array[1], width: array[2], height: array[3])
+    # if @food.update(x: array[0], y: array[1], width: array[2], height: array[3])
+    #   flash[:notice] = "「#{@food.name}登録完了」"
+    #   redirect_to action: 'index', id: @food.id
+    # else
+    #   redirect_to action: 'check', id: @food.id
+    # end
+
+    if @food.update(x: 355, y: 107, width: 106, height: 107)
       flash[:notice] = "「#{@food.name}登録完了」"
       redirect_to action: 'index', id: @food.id
     else

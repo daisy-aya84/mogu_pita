@@ -6,17 +6,22 @@
   今いちば〜ん食べたいものは？</p>
   <div class="form">
     <%= form_tag("/users/#{@user.id}/eat") do %>
-      <% @options.each do |option| %>
+      <!--<% @options.each do |option| %>
         <% if @foods.where(op_id: option.id).count > 0 %>
           <label class="option">
             <input type="radio" name="op_id" value="<%=" #{option.id} "%>"><%= option.name %>
           </label>
           <br>
         <% end %>
+      <% end %> -->
+      <% @foods.each do |food| %>
+        <label class="option">
+          <input type="radio" name="f_id" value="<%=" #{food.id} "%>"><%= food.name %>
+        </label>
       <% end %>
       <br>
       <input type="submit" value="これにする" style='font-size:30px; padding:80px 0px;'>
     <% end %>
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </article>
