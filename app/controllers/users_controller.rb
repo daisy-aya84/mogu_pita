@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def choose
     @options = Option.all
     # @foods = Food.all
-    @foods = Food.where(op_id: 19).order('id DESC').limit(5)
+    @foods = Food.where(op_id: 5).order('id DESC').limit(5)
     @user = User.find_by(id: params[:id])
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ひとつ選択して下さい"
       redirect_to("/users/#{@user.id}/choose")
     else
-      @user.op_id = 19
+      @user.op_id = 5
       @user.f_id = params[:f_id]
       @user.save
       redirect_to("/users/#{@user.id}/edit")
