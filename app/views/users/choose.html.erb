@@ -3,7 +3,8 @@
     <h2>Step2</h2>
   </div>
   <p><strong><%= @user.name %></strong>さんが<br>
-  今いちば〜ん食べたいものは？</p>
+  <!--今いちば〜ん食べたいものは？</p>-->
+  描いた絵はどれかな？
   <div class="form">
     <%= form_tag("/users/#{@user.id}/eat") do %>
       <!--<% @options.each do |option| %>
@@ -16,12 +17,13 @@
       <% end %> -->
       <% @foods.each do |food| %>
         <label class="option">
-          <input type="radio" name="f_id" value="<%=" #{food.id} "%>"><%= food.name %>
+          <input type="radio" name="f_id" value="<%=" #{food.id} "%>"><img src="<%="/foods/#{food.op_id}/#{food.id}.jpg"%>" alt="food" width="300px">
         </label>
       <% end %>
       <br>
-      <input type="submit" value="これにする" style='font-size:30px; padding:80px 0px;'>
+      <input type="submit" value="OK" style='font-size:30px; padding:80px 0px;'>
     <% end %>
   </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </article>

@@ -2,12 +2,15 @@
     <div class="title">
         <h2>Step1</h2>
     </div>
-    <p>誰が美味しいごはんを食べる？</p>
+    <!--<p>誰が美味しいごはんを食べる？</p> -->
+    <p>なまえをおしえてね！</p>
     <div class="form">
         <%= form_tag("/users/create", {multipart: true}) do %>
-            名前<br>
+            <!--名前<br>-->
+            なまえ<br>
             <input name="name" value="<%= @user.name %>"  style='font-size:40px;'><br>
-            <input class="gohan" type="submit" value="おいしいご飯を食べたきもちになる" style='margin:80px 80px 0px 0px;'>
+            <!--<input class="gohan" type="submit" value="おいしいご飯を食べたきもちになる" style='margin:80px 80px 0px 0px;'>-->
+            <input class="gohan" type="submit" value="OK" style='margin:80px 80px 0px 0px;'>
         <% end %>
      </div>
 </article>
