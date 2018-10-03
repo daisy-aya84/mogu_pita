@@ -61,12 +61,10 @@ class Food < ApplicationRecord
   
   def small
     crop_face_file = "public/foods/#{self.op_id}/#{self.image}"
-    p '==========================='
-    p crop_face_file
-    p '==========================='
     imageList = Magick::ImageList.new(crop_face_file)
-    imageList = imageList.resize(1000, 600)
-    imageList.write("public/foods/5/#{self.id}.jpg")
+
+    imageList = imageList.resize(800, 550)
+    imageList.write("public/foods/#{self.op_id}/#{self.id}.jpg")
     "#{self.id}.jpg"
   end
 end
