@@ -30,12 +30,17 @@ class FoodsController < ApplicationController
     @food = Food.find_by(id: params[:id])
 
     if params[:image]
-      @food.image = "#{@food.id}.jpg"
+      @food.image = "import#{@food.id}.jpg"
       p_image = params[:image]
       File.binwrite("public/foods/#{@food.op_id}/#{@food.image}", p_image.read)
     end
     @food.save
 
+    r_image = @food.small
+    @food.update(image: r_image)
+
+    # 顔認証して座標取得
+    # -------------------------------------------
     # array = []
     # array  = @food.get_positions
     
@@ -45,13 +50,17 @@ class FoodsController < ApplicationController
     # else
     #   redirect_to action: 'check', id: @food.id
     # end
+    # -------------------------------------------
 
+    # 座標固定
+    # --------------------------------------------
     if @food.update(x: 355, y: 107, width: 106, height: 107)
       flash[:notice] = "「#{@food.name}登録完了」"
       redirect_to action: 'index', id: @food.id
     else
       redirect_to action: 'check', id: @food.id
     end
+    # --------------------------------------------
   end
 
   def destroy

@@ -103,7 +103,7 @@ class User < ApplicationRecord
   def mix(food_id)
     @food = Food.find_by(id: food_id)
 
-    crop_face_file = "public/re/#{self.resized_img}" # リサイズしたユーザーの顔写真
+    crop_face_file = "public/re/#{self.resized_img}"        # リサイズしたユーザーの顔写真
     food_file = "public/foods/#{self.op_id}/#{@food.image}" # ご飯の写真
 
     foodShitenX = @food.x # ご飯の写真の顔の始点のx座標

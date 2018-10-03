@@ -47,15 +47,26 @@ class Food < ApplicationRecord
     # 返り値がJSON形式のため、JSONをrubyで扱えるように変換。
     response_rb = JSON.parse(response.body)
 
-  description = response_rb["responses"][0]["faceAnnotations"][0]["fdBoundingPoly"]["vertices"][0]
-  # faceNumber -= 1
-  faceShitenX = description["x"]
-  faceShitenY = description["y"]
-  # ユーザーの顔写真の縦横のピクセルを手に入れる
-  description = response_rb["responses"][0]["faceAnnotations"][0]["fdBoundingPoly"]["vertices"][2]
-  faceNagasaX = description["x"] - faceShitenX
-  faceNagasaY = description["y"] - faceShitenY
+    description = response_rb["responses"][0]["faceAnnotations"][0]["fdBoundingPoly"]["vertices"][0]
+    # faceNumber -= 1
+    faceShitenX = description["x"]
+    faceShitenY = description["y"]
+    # ユーザーの顔写真の縦横のピクセルを手に入れる
+    description = response_rb["responses"][0]["faceAnnotations"][0]["fdBoundingPoly"]["vertices"][2]
+    faceNagasaX = description["x"] - faceShitenX
+    faceNagasaY = description["y"] - faceShitenY
+    
+    [faceShitenX, faceShitenY, faceNagasaX, faceNagasaY]
+  end
   
-  [faceShitenX, faceShitenY, faceNagasaX, faceNagasaY]
+  def small
+    crop_face_file = "public/foods/#{self.op_id}/#{self.image}"
+    p '==========================='
+    p crop_face_file
+    p '==========================='
+    imageList = Magick::ImageList.new(crop_face_file)
+    imageList = imageList.resize(1000, 600)
+    imageList.write("public/foods/19/#{self.id}.jpg")
+    "#{self.id}.jpg"
   end
 end
