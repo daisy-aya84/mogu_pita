@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
   def create
     if params[:name] == ""
       flash[:notice] = "名前を入力してください"
@@ -68,8 +68,13 @@ class UsersController < ApplicationController
       File.binwrite("public/images/#{@user.image}", image.read)
       @user.save
       member_number = @user.triming
-      @user.update(cut_img: "#{member_number}")
-      redirect_to("/users/#{@user.id}/set")
+      if member_number == 1
+        flash[:notice] = "顔が認証できません！別の写真を選択してください"
+        redirect_to("/users/#{@user.id}/edit")
+      else
+        @user.update(cut_img: "#{member_number}")
+        redirect_to("/users/#{@user.id}/set")
+      end
     end
   end
   
