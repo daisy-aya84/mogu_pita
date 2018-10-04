@@ -5,9 +5,8 @@ class Food < ApplicationRecord
   require 'RMagick'
   
   # 環境変数とAPI_URLを定数として定義します。
-  API_KEY = "AIzaSyB6d3QrLa3OC5hKMwahmxZUO7MH-swM1JY"
   # 環境変数から呼び出すようにする
-  # API_KEY = ENV['GOOGLE_VISION_API_KEY']
+  API_KEY = ENV['GOOGLE_VISION_API_KEY']
   API_URL = "https://vision.googleapis.com/v1/images:annotate?key=#{API_KEY}"
 
   def get_positions
