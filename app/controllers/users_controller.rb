@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def choose
     @options = Option.all
     # @foods = Food.all
-    @foods = Food.where(op_id: 5).order('id DESC').limit(5)
+    @foods = Food.where(op_id: 5).order('id DESC').limit(15)
     @user = User.find_by(id: params[:id])
   end
 
