@@ -2,7 +2,7 @@
     <div class="title">
         <h2>Step4</h2>
     </div>
-    <p>あなたの写真を選んでください</p>
+    <p>あなたの写真を選んでください！</p>
     <% count = @user.cut_img.to_i-2 %>
     <%= form_tag("/users/#{@user.id}/input") do %>
         <% for i in 0..count do  %>
