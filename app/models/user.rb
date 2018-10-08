@@ -54,9 +54,8 @@ class User < ApplicationRecord
     ################
     faceNumber = response_rb.to_s.scan("fdBoundingPoly").length
     puts "認識した人数:" + faceNumber.to_s
-    
+    member_number =faceNumber
     i = 0
-    
     while faceNumber > 0 do
         # ユーザーの顔写真の左上の座標を手に入れる
         description = response_rb["responses"][0]["faceAnnotations"][i]["fdBoundingPoly"]["vertices"][0]
@@ -82,7 +81,7 @@ class User < ApplicationRecord
         faceNumber -= 1
         i += 1
     end
-    i + 1
+    member_number
   end
   
   def resize(food_id)
