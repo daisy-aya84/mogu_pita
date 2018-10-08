@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       File.binwrite("public/images/#{@user.image}", image.read)
       @user.save
       member_number = @user.triming
-      if member_number == 1
+      if member_number == 0
         flash[:notice] = "顔が認証できません！別の写真を選択してください"
         redirect_to("/users/#{@user.id}/edit")
       else
